@@ -16,4 +16,13 @@ public class VinylsService {
     public List<VinylsEntity> getAllVinyls() {
         return vinylRepository.findAll();
     }
+    public VinylsEntity createVinyls(VinylsEntity vinyls) {
+        if (vinyls == null) {
+            throw new IllegalArgumentException("Vinyls cannot be null");
+        }
+        return vinylRepository.save(vinyls);
+    }
+    public void deleteVinylsById(int id) {
+    }
 }
+
